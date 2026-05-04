@@ -22,7 +22,6 @@
             padding-bottom: 50px;
         }
 
-        /* Arka Plan Animasyonu */
         .flower {
             position: fixed;
             top: -10%;
@@ -36,13 +35,12 @@
         }
 
         .container {
-            max-width: 950px;
+            max-width: 1000px; /* PC'de biraz daha geniş alan */
             margin: 0 auto;
             padding: 40px 20px;
             text-align: center;
         }
 
-        /* Üst Başlık Kartı */
         .header-box {
             background: white;
             padding: 40px 20px;
@@ -57,16 +55,8 @@
             font-size: clamp(2.5rem, 8vw, 3.8rem);
             margin: 0;
             color: var(--primary-color);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
         }
 
-        p.subtitle {
-            font-size: 1.1rem;
-            margin-top: 10px;
-            opacity: 0.9;
-        }
-
-        /* İstatistik Bölümü */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -80,26 +70,16 @@
             border-radius: 25px;
             backdrop-filter: blur(10px);
             border: 1px solid white;
-            transition: transform 0.3s ease;
             box-shadow: 0 8px 20px rgba(0,0,0,0.05);
         }
 
-        .stat-card:hover {
-            transform: translateY(-8px);
-            background: white;
-        }
-
-        .stat-card i { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 15px; }
-        .stat-card h3 { margin: 5px 0; font-size: 1.4rem; font-weight: 600; }
-        .stat-card p { margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Polaroid Galeri */
+        /* DÜZELTİLEN GALERİ KISMI */
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 45px;
             margin-top: 50px;
-            justify-items: center;
+            justify-content: center; /* PC'de fotoğrafları ortalar */
         }
 
         .polaroid {
@@ -108,8 +88,7 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.12);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border-radius: 5px;
-            max-width: 320px;
-            cursor: pointer;
+            width: 300px; /* Polaroidlerin sabit genişliği */
         }
 
         .polaroid:nth-child(1) { transform: rotate(-3deg); }
@@ -121,7 +100,6 @@
         .polaroid:hover {
             transform: scale(1.08) rotate(0deg) !important;
             z-index: 10;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
         .polaroid img {
@@ -129,7 +107,6 @@
             aspect-ratio: 1/1;
             object-fit: cover;
             border-radius: 3px;
-            background: #eee;
         }
 
         .caption {
@@ -139,12 +116,10 @@
             color: #7a4a61;
         }
 
-        /* Mektup Bölümü */
         .letter-section {
             background: #fff9f0;
             padding: clamp(30px, 6vw, 50px);
             border-radius: 20px;
-            position: relative;
             box-shadow: 8px 8px 20px rgba(0,0,0,0.06);
             text-align: left;
             line-height: 1.9;
@@ -152,32 +127,9 @@
             margin-top: 80px;
         }
 
-        .letter-section h2 { 
-            font-family: 'Dancing Script', cursive; 
-            text-align: center; 
-            font-size: 2.5rem;
-            margin-bottom: 25px;
-            color: var(--primary-color);
-        }
+        .letter-section h2 { font-family: 'Dancing Script', cursive; text-align: center; color: var(--primary-color); }
 
-        .letter-section p {
-            font-size: 1.1rem;
-            color: #444;
-        }
-
-        .footer {
-            margin-top: 70px;
-            font-size: 0.9rem;
-            opacity: 0.7;
-            font-weight: 300;
-        }
-
-        @media (max-width: 600px) {
-            .container { padding: 20px 15px; }
-            .stats-grid { gap: 10px; }
-            .stat-card { padding: 15px 10px; }
-            .header-box { padding: 30px 15px; }
-        }
+        .footer { margin-top: 70px; font-size: 0.9rem; opacity: 0.7; }
     </style>
 </head>
 <body>
@@ -185,89 +137,46 @@
 <div class="container">
     <div class="header-box">
         <h1>İyi Ki Doğdun Annem!</h1>
-        <p class="subtitle">Hayatımın ilk aşkı, en büyük rehberim ve canım anneme...</p>
+        <p style="margin-top:10px;">Hayatımın ilk aşkı, en büyük rehberim ve canım anneme...</p>
     </div>
 
     <div class="stats-grid">
-        <div class="stat-card">
-            <i class="fas fa-heart"></i>
-            <h3>Sonsuz</h3>
-            <p>Sevgi Oranı</p>
-        </div>
-        <div class="stat-card">
-            <i class="fas fa-utensils"></i>
-            <h3>Efsane</h3>
-            <p>Yemek Lezzeti</p>
-        </div>
-        <div class="stat-card">
-            <i class="fas fa-broadcast-tower"></i>
-            <h3>%100</h3>
-            <p>Anne Radarı</p>
-        </div>
-        <div class="stat-card">
-            <i class="fas fa-medal"></i>
-            <h3>#1</h3>
-            <p>Dünya Sıralaması</p>
-        </div>
+        <div class="stat-card"><i class="fas fa-heart"></i><h3>Sonsuz</h3><p>Sevgi Oranı</p></div>
+        <div class="stat-card"><i class="fas fa-utensils"></i><h3>Efsane</h3><p>Yemek Lezzeti</p></div>
+        <div class="stat-card"><i class="fas fa-broadcast-tower"></i><h3>%100</h3><p>Anne Radarı</p></div>
+        <div class="stat-card"><i class="fas fa-medal"></i><h3>#1</h3><p>Dünya Sıralaması</p></div>
     </div>
 
     <div class="gallery">
-        <div class="polaroid">
-            <img src="foto1.jpg" alt="Anı 1">
-            <div class="caption">En Güzel Gülüş</div>
-        </div>
-        <div class="polaroid">
-            <img src="foto2.jpg" alt="Anı 2">
-            <div class="caption">Huzur Kaynağım</div>
-        </div>
-        <div class="polaroid">
-            <img src="foto3.jpg" alt="Anı 3">
-            <div class="caption">Canım Annem</div>
-        </div>
-        <div class="polaroid">
-            <img src="foto4.jpg" alt="Anı 4">
-            <div class="caption">İlk Kahramanım</div>
-        </div>
-        <div class="polaroid">
-            <img src="foto5.jpg" alt="Anı 5">
-            <div class="caption">İyi Ki Varsın</div>
-        </div>
+        <div class="polaroid"><img src="foto1.jpg" alt="1"><div class="caption">En Güzel Gülüş</div></div>
+        <div class="polaroid"><img src="foto2.jpg" alt="2"><div class="caption">Huzur Kaynağım</div></div>
+        <div class="polaroid"><img src="foto3.jpg" alt="3"><div class="caption">Canım Annem</div></div>
+        <div class="polaroid"><img src="foto4.jpg" alt="4"><div class="caption">İlk Kahramanım</div></div>
+        <div class="polaroid"><img src="foto5.jpg" alt="5"><div class="caption">İyi Ki Varsın</div></div>
     </div>
 
     <div class="letter-section">
         <h2>Sana Küçük Bir Not...</h2>
         <p>Canım annem, bugün senin günün. Seninle geçen her gün benim için aslında bir hediye. Her zaman arkamda olduğun, bana sonsuz güvendiğin ve her düştüğümde elimden tutup beni ayağa kaldırdığın için teşekkür ederim. Senin sayende hayata daha güçlü bakıyorum. İyi ki benim annemsin, seni çok seviyorum!</p>
-        <p style="text-align: right; font-weight: bold; margin-top: 25px; font-size: 1.3rem; color: var(--primary-color);">
-            - Oğlun Utku
-        </p>
+        <p style="text-align: right; font-weight: bold; margin-top: 25px; font-size: 1.3rem; color: var(--primary-color);">- Oğlun Utku</p>
     </div>
 
-    <div class="footer">
-        <p>Bu site <strong>Utku</strong> tarafından büyük bir sevgiyle kodlandı ❤️</p>
-    </div>
+    <div class="footer"><p>Bu site <strong>Utku</strong> tarafından büyük bir sevgiyle kodlandı ❤️</p></div>
 </div>
 
 <script>
     function createFlower() {
         const flower = document.createElement('div');
         flower.classList.add('flower');
-        const icons = ['🌸', '🌼', '✨', '💖', '🌹'];
-        flower.innerHTML = icons[Math.floor(Math.random() * icons.length)];
-        
+        flower.innerHTML = ['🌸', '🌼', '✨', '💖', '🌹'][Math.floor(Math.random() * 5)];
         flower.style.left = Math.random() * 100 + 'vw';
         flower.style.animationDuration = Math.random() * 3 + 2 + 's';
         flower.style.fontSize = Math.random() * 20 + 15 + 'px';
         flower.style.opacity = Math.random() * 0.8 + 0.2;
-        
         document.body.appendChild(flower);
-        
-        setTimeout(() => {
-            flower.remove();
-        }, 5000);
+        setTimeout(() => flower.remove(), 5000);
     }
-
     setInterval(createFlower, 350);
 </script>
-
 </body>
 </html>
